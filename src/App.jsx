@@ -95,6 +95,59 @@ function Toast({ toast, onClose }) {
   );
 }
 
+/*
+ * Keeping image state in its own component fixes the ESLint
+ * set-state-in-effect error. The key on MemeCardImage below
+ * resets this component whenever the image URL changes.
+ */
+function MemeCardImage({ meme }) {
+  const [imageFailed, setImageFailed] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  return (
+    <div className="meme-image">
+      {!imageFailed && meme.image ? (
+        <>
+          {!imageLoaded && (
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: 0,
+                display: "grid",
+                placeItems: "center",
+                fontSize: "24px",
+              }}
+            >
+              ⏳
+            </div>
+          )}
+
+          <img
+            src={meme.image}
+            alt={meme.title}
+            loading="lazy"
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageFailed(true)}
+            style={{
+              opacity: imageLoaded ? 1 : 0,
+              transition: "opacity .2s ease",
+            }}
+          />
+        </>
+      ) : (
+        <div className="image-fallback">
+          <span className="fallback-emoji">😂</span>
+          <span>{meme.title}</span>
+          <small>Image unavailable</small>
+        </div>
+      )}
+
+      <span className="image-view-label">VIEW MEME ↗</span>
+    </div>
+  );
+}
+
 function MemeCard({
   meme,
   isFavorite,
@@ -102,14 +155,6 @@ function MemeCard({
   onOpen,
   onShare,
 }) {
-  const [imageFailed, setImageFailed] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  useEffect(() => {
-    setImageFailed(false);
-    setImageLoaded(false);
-  }, [meme.image]);
-
   return (
     <article className="meme-card">
       <button
@@ -118,46 +163,7 @@ function MemeCard({
         onClick={() => onOpen(meme)}
         aria-label={`View ${meme.title}`}
       >
-        <div className="meme-image">
-          {!imageFailed && meme.image ? (
-            <>
-              {!imageLoaded && (
-                <div
-                  aria-hidden="true"
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    display: "grid",
-                    placeItems: "center",
-                    fontSize: "24px",
-                  }}
-                >
-                  ⏳
-                </div>
-              )}
-
-              <img
-                src={meme.image}
-                alt={meme.title}
-                loading="lazy"
-                onLoad={() => setImageLoaded(true)}
-                onError={() => setImageFailed(true)}
-                style={{
-                  opacity: imageLoaded ? 1 : 0,
-                  transition: "opacity .2s ease",
-                }}
-              />
-            </>
-          ) : (
-            <div className="image-fallback">
-              <span className="fallback-emoji">😂</span>
-              <span>{meme.title}</span>
-              <small>Image unavailable</small>
-            </div>
-          )}
-
-          <span className="image-view-label">VIEW MEME ↗</span>
-        </div>
+        <MemeCardImage key={meme.image} meme={meme} />
       </button>
 
       <div className="meme-details">
@@ -350,19 +356,24 @@ export default function App() {
     };
   }, []);
 
+  /*
+   * Favorites are saved in localStorage.
+   * console.error avoids calling a state update from this effect,
+   * fixing the remaining ESLint set-state-in-effect error.
+   */
   useEffect(() => {
     try {
       localStorage.setItem(
         FAVORITES_KEY,
         JSON.stringify(favorites)
       );
-    } catch {
-      notify(
+    } catch (error) {
+      console.error(
         "Favorites could not be saved in this browser.",
-        "error"
+        error
       );
     }
-  }, [favorites, notify]);
+  }, [favorites]);
 
   useEffect(() => {
     let cancelled = false;
