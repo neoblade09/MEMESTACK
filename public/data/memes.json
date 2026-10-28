@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "title": "Meme 01",
+    "category": "Funny",
+    "image": "https://i.pinimg.com/736x/34/d2/9d/34d29d0b97667b8a0c428ca5f905f8dd.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 2,
+    "title": "Meme 02",
+    "category": "Relatable",
+    "image": "https://i.pinimg.com/736x/cf/f3/60/cff360c85ac1163d94cb6ecb94a39aef.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 3,
+    "title": "Meme 03",
+    "category": "Reaction",
+    "image": "https://i.pinimg.com/736x/96/2b/3a/962b3a73ea46db88b7228ea8de8f1848.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 4,
+    "title": "Meme 04",
+    "category": "Trending",
+    "image": "https://i.pinimg.com/736x/34/72/51/347251b30b3b45e7d00b827b98197282.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 5,
+    "title": "Meme 05",
+    "category": "Funny",
+    "image": "https://i.pinimg.com/736x/11/84/12/118412b153b4c830a857a73af6655741.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 6,
+    "title": "Meme 06",
+    "category": "Relatable",
+    "image": "https://i.pinimg.com/736x/88/bc/4c/88bc4c8ba6a42352c6d22228544519ea.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 7,
+    "title": "Meme 07",
+    "category": "Reaction",
+    "image": "https://i.pinimg.com/736x/5f/e7/bc/5fe7bc5b3616b758b833c8f94a100635.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 8,
+    "title": "Meme 08",
+    "category": "Trending",
+    "image": "https://i.pinimg.com/736x/2d/e3/ab/2de3ab4421248566575004f352376e9c.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 9,
+    "title": "Meme 09",
+    "category": "Funny",
+    "image": "https://i.pinimg.com/736x/57/c6/c0/57c6c00e4af7a8f4c00ee491ed3a7a22.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 10,
+    "title": "Meme 10",
+    "category": "Relatable",
+    "image": "https://i.pinimg.com/736x/7e/d5/68/7ed568f1c81d027d0bc759f59dea29db.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 11,
+    "title": "Meme 11",
+    "category": "Reaction",
+    "image": "https://i.pinimg.com/736x/dc/8f/0e/dc8f0eb77b7a0e4b87430cb114f1b8ab.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 12,
+    "title": "Meme 12",
+    "category": "Trending",
+    "image": "https://i.pinimg.com/736x/ef/cb/a7/efcba7de4349171d050e768ed879653e.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 13,
+    "title": "Meme 13",
+    "category": "Funny",
+    "image": "https://i.pinimg.com/736x/be/aa/ee/beaaeea7faccdd0e1d607a1743ea7f87.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 14,
+    "title": "Meme 14",
+    "category": "Relatable",
+    "image": "https://i.pinimg.com/736x/a1/60/cd/a160cd74873b3c32bd75df79c42f40b3.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  },
+  {
+    "id": 15,
+    "title": "Meme 15",
+    "category": "Reaction",
+    "image": "https://i.pinimg.com/736x/b3/d0/75/b3d07504edd93d789d954b5c16d8d959.jpg",
+    "description": "A hand-picked meme from the MEMESTACK collection."
+  }
+]
