@@ -6,7 +6,7 @@ import {
   useState,
 } from "react";
 
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://memestack-api.onrender.com/api";
 const DATA_URL = "/data/memes.json";
 
 const CATEGORIES = [
